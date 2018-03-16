@@ -1,9 +1,8 @@
-## Presentation on AlphaGo
+## Presentation on CapsNet
 
 ### About
 
-This is the presentation of the article [Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm
-](https://arxiv.org/abs/1712.01815) and the article [Mastering the game of Go without human knowledge](https://www.nature.com/articles/nature24270.epdf?author_access_token=VJXbVjaSHxFoctQQ4p2k4tRgN0jAjWel9jnR3ZoTv0PVW4gB86EEpGqTRDtpIz-2rmo8-KG06gqVobU5NSCFeHILHcVFUeMsbvwS-lxjqQGg98faovwjxeTUgZAUMnRQ) given at the [AI Seminar](http://ktiml.mff.cuni.cz/~bartak/ui_seminar/).
+This is the presentation of the article [Dynamic Routing Between Capsules](https://arxiv.org/abs/1710.09829) for [Pattern Recognition and Computer Vision Reading Group](http://cmp.felk.cvut.cz/~toliageo/rg/index.html).
 
 ### Requirements
 
