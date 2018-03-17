@@ -16,6 +16,7 @@
 \bibliography{../bibliography.bib}
 
 \setcounter{tocdepth}{1}      % hide subsections in Table of Contents
+\renewcommand{\thealgorithm}{} % disable numbering of algorithms
 
 % TODO change text colors
 \setbeamercolor{background canvas}{bg=white}
@@ -94,16 +95,25 @@
 
     \begin{frame}{Routing Algorithm}
       \begin{algorithm}[H]
+        \caption{Dynamic Routing between Capsules}
+        \scriptsize
         \begin{algorithmic}[1]
           \Procedure{Routing}{$\bm{\hat{u}}_{j|i}$, $r$, $l$}
+          \pause
           \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets 0$.
+          \pause
           \For{$r$ iterations}
+          \pause
           % TODO fix missing \ref
           \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{softmax}}
+          \pause
           \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$
+          \pause
           % TODO fix missing \ref
           \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{squash}}
+          \pause
           \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets b_{ij} + {\bf \hat{u}}_{j|i} . {\bf v}_j$
+          \pause
           \EndFor
           \Return ${\bf v}_j$
           \EndProcedure
