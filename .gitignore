@@ -32,6 +32,7 @@
 *.xdy
 *.tdo
 *._aux
+*_aux
 *._log
 *.project.vim
 *.synctex.gz
