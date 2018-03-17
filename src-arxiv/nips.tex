@@ -95,13 +95,13 @@ The fact that the output of a capsule is a vector makes it possible to use a pow
 Convolutional neural networks (CNNs) use translated replicas of learned feature detectors. This allows them to translate knowledge about good weight values acquired at one position in an image to other positions.  This has proven extremely helpful in image interpretation.  Even though we are replacing the scalar-output feature detectors of CNNs with vector-output capsules and max-pooling with routing-by-agreement, we would still like to replicate learned knowledge across space. To achieve this, we make all but the last layer of capsules be convolutional. As with CNNs, we make higher-level capsules cover larger regions of the image. Unlike max-pooling however, we do not throw away information about the precise position of the entity within the region.  For low level capsules, location information is ``place-coded'' by which capsule is active.  As we ascend the hierarchy, more and more of the positional information is ``rate-coded'' in the real-valued components of the output vector of a capsule. This shift from place-coding to rate-coding combined with the fact that higher-level capsules represent more complex entities with more degrees of freedom suggests that the dimensionality of capsules should increase as we ascend the hierarchy. 
 
 \section{How the vector inputs and outputs of a capsule are computed}
-%\begin{figure}[t]
+\begin{figure}[t]
 
-%  \caption{Capsule schema with routing. Capsule $i$ sends two predictions, $(\hat{u})$, to capsule $j$ and $k$ at next layer. The routing layer for capsule $i$, ($b_i$), sends the coupling coefficient of $i$ with $j$ and $k$. After capsule $j$ and $k$ calculate their output vector $v$, they give the feedback about prediction fitness, $a$, to the routing logits.}
-%  \label{routing}
-%  \centering
-%    \includegraphics[height=3cm]{capsRouting}
-%\end{figure}
+  \caption{Capsule schema with routing. Capsule $i$ sends two predictions, $(\hat{u})$, to capsule $j$ and $k$ at next layer. The routing layer for capsule $i$, ($b_i$), sends the coupling coefficient of $i$ with $j$ and $k$. After capsule $j$ and $k$ calculate their output vector $v$, they give the feedback about prediction fitness, $a$, to the routing logits.}
+  \label{routing}
+  \centering
+    \includegraphics[height=3cm]{capsRouting}
+\end{figure}
 There are many possible ways to implement the general idea of capsules. The aim of this paper is not to explore this whole space but simply to show that one fairly straightforward implementation works well and that dynamic routing helps.
 
 We want the length of the output vector of a capsule to represent the probability that the entity represented by the capsule is present in the current input.
@@ -291,10 +291,10 @@ We also tested the exact same architecture as we used for MNIST on smallNORB (\c
 
 We also trained a smaller network on the small training set of SVHN (\cite{netzer2011reading}) with only 73257 images. We reduced the number of first convolutional layer channels to 64, the primary capsule layer to 16 $6D$-capsules with $8D$ final capsule layer at the end and achieved $4.3\%$ on the test set. 
 
-%for vhn datasets, and were able to achieve x\% and 82.99\% test accuracy respectively. 
-%(describe CIFAR10 network)
-%The model used for the svhn experiment was an ensemble model made of 4 different convolutional capsule networks. The neworks were built with 3 leaky routing iterations between capsule layers, 512 starting convolutional units, followed by a layer of 32 capsules, then 16 capsules, and then a final output layer of 10 capsules.
-%Neither of these results beat the current state of the art, but they illustrate that our capsule architecture can be used in a wide range of problems and achieve decent results. More hyperparameter tuning and architectural exploration would be needed to achieve state of the art performance. However, due our current system's reliance on  small matrix multiplications, and the optimized gpu implementations of these multiplications, training and testing are relatively slow. Thus an exhaustive search of hyperparameter search has been unobtainable thus far. This is an area for future research. 
+for vhn datasets, and were able to achieve x\% and 82.99\% test accuracy respectively. 
+(describe CIFAR10 network)
+The model used for the svhn experiment was an ensemble model made of 4 different convolutional capsule networks. The neworks were built with 3 leaky routing iterations between capsule layers, 512 starting convolutional units, followed by a layer of 32 capsules, then 16 capsules, and then a final output layer of 10 capsules.
+Neither of these results beat the current state of the art, but they illustrate that our capsule architecture can be used in a wide range of problems and achieve decent results. More hyperparameter tuning and architectural exploration would be needed to achieve state of the art performance. However, due our current system's reliance on  small matrix multiplications, and the optimized gpu implementations of these multiplications, training and testing are relatively slow. Thus an exhaustive search of hyperparameter search has been unobtainable thus far. This is an area for future research. 
 
 \section{Discussion and previous work}
 
@@ -309,7 +309,7 @@ This assumption, which was motivated by the perceptual phenomenon called "crowdi
 
 Capsules use neural activities that vary as viewpoint varies rather than trying to eliminate viewpoint variation from the activities. This gives them an advantage over "normalization" methods like spatial transformer networks (\cite{spatialtransformer}): They can deal with multiple different affine transformations of different objects or object parts at the same time. 
 
-Capsules are also very good for dealing with segmentation, which is another of the toughest problems in vision, because the vector of instantiation parameters allows them to use routing-by-agreement, as we have demonstrated in this paper. The importance of dynamic routing procedure is also backed by biologically plausible models of invarient pattern recognition in the visual cortex. \cite{hinton1981parallel} proposes dynamic connections and canonical object based frames of reference to generate shape descriptions that can be used for object recognition. \cite{olshausen1993neurobiological} improves upon \cite{hinton1981parallel} dynamic connections and presents a biologically plausible, position and scale invariant model of object representations. 
+Capsules are also very good for dealing with segmentation, which is another of the toughest problems in vision, because the vector of instantiation parameters allows them to use routing-by-agreement, as we have demonstrated in this paper. The importance of dynamic routing procedure is also backed by biologically plausible models of invariant pattern recognition in the visual cortex. \cite{hinton1981parallel} proposes dynamic connections and canonical object based frames of reference to generate shape descriptions that can be used for object recognition. \cite{olshausen1993neurobiological} improves upon \cite{hinton1981parallel} dynamic connections and presents a biologically plausible, position and scale invariant model of object representations. 
 
 Research on capsules is now at a similar stage to research on recurrent neural networks for speech recognition at the beginning of this century. There are fundamental representational reasons for believing that it is a better approach but it probably requires a lot more small insights before it can out-perform a highly developed technology.  The fact that a simple capsules system already gives unparalleled performance at segmenting overlapping digits is an early indication that capsules are a direction worth exploring. 
 
