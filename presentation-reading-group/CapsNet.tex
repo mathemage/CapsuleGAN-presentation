@@ -5,7 +5,10 @@
 \usepackage{color}
 \usepackage{amsopn}
 \usepackage{tabto}
-\usepackage{pbox}
+\usepackage{pbox}           % table line break
+\usepackage{algorithm}      % algorithm
+\usepackage[noend]{algpseudocode} % algorithm
+\usepackage{bm}             % bold in math
 
 %%% Bibliography
 \usepackage[backend=bibtex, style=authoryear]{biblatex}
@@ -86,6 +89,28 @@
   \section{Routing by an Agreement}
 
   \subsection{Algorithm}
+  {
+    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+
+    \begin{frame}{Routing Algorithm}
+      \begin{algorithm}[H]
+        \begin{algorithmic}[1]
+          \Procedure{Routing}{$\bm{\hat{u}}_{j|i}$, $r$, $l$}
+          \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets 0$.
+          \For{$r$ iterations}
+          % TODO fix missing \ref
+          \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{softmax}}
+          \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$
+          % TODO fix missing \ref
+          \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{squash}}
+          \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets b_{ij} + {\bf \hat{u}}_{j|i} . {\bf v}_j$
+          \EndFor
+          \Return ${\bf v}_j$
+          \EndProcedure
+        \end{algorithmic}
+      \end{algorithm}
+    \end{frame}
+  }
   
   \subsection{Routing Iterations}
   {
@@ -189,15 +214,15 @@
     \begin{frame}{MultiMNIST Reconstructions (CapsNet, 3 routing iterations)}
       \begin{center}
         \begin{tabular}{c c c c}
-          R:$(2,7)$ &  R:$(6,0)$ & R:$(6,8)$ & R:$(7,1)$ \\
-          L:$(2,7)$ &  L:$(6,0)$ & L:$(6,8)$ & L:$(7,1)$ \\ \hline
+          R:$(2,7)$ & R:$(6,0)$ & R:$(6,8)$ & R:$(7,1)$ \\
+          L:$(2,7)$ & L:$(6,0)$ & L:$(6,8)$ & L:$(7,1)$ \\ \hline
           \includegraphics[height=.3\textheight]{../img/recons/27} &
           \includegraphics[height=.3\textheight]{../img/recons/60} &
           \includegraphics[height=.3\textheight]{../img/recons/68} &
-          \includegraphics[height=.3\textheight]{../img/recons/71} & \\
+          \includegraphics[height=.3\textheight]{../img/recons/71} \\
           \pause
           *R:$(5,7)$ & *R:$(2,3)$ & R:$(2,8)$ & R:P:$(2,7)$ \\
-          L:$(5,0)$ &  L:$(4,3)$ & L:$(2,8)$ & L:$(2,8)$ \\ \hline
+           L:$(5,0)$ &  L:$(4,3)$ & L:$(2,8)$ & L:$(2,8)$ \\ \hline
           \includegraphics[height=.3\textheight]{../img/recons/0_5_5_0_332} &
           \includegraphics[height=.3\textheight]{../img/recons/4_3_3_4_397} &
           \includegraphics[height=.3\textheight]{../img/recons/2_8_2_7_152} &
@@ -214,14 +239,14 @@
           \includegraphics[height=.3\textheight]{../img/recons/87} &
           \includegraphics[height=.3\textheight]{../img/recons/94} &
           \includegraphics[height=.3\textheight]{../img/recons/95} &
-          \includegraphics[height=.3\textheight]{../img/recons/84} & \\
+          \includegraphics[height=.3\textheight]{../img/recons/84} \\
           \pause
           *R:$(0,8)$ & *R:$(1,6)$ & R:$(4,9)$ &  R:P:$(4, 0)$ \\
            L:$(1,8)$ &  L:$(7,6)$ & L:$(4, 9)$ & L:$(4, 9)$ \\ \hline
           \includegraphics[height=.3\textheight]{../img/recons/1_8_8_1_264} &
           \includegraphics[height=.3\textheight]{../img/recons/7_6_6_7_4} &
           \includegraphics[height=.3\textheight]{../img/recons/4_9_4_0_453} &
-          \includegraphics[height=.3\textheight]{../img/recons/4_9_4_0_454p}  \\ \hline
+          \includegraphics[height=.3\textheight]{../img/recons/4_9_4_0_454p}
         \end{tabular}
       \end{center}
     \end{frame}
