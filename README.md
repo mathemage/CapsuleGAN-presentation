@@ -20,4 +20,5 @@ my [presentation](http://cyber.felk.cvut.cz/seminars/?event=1236) on [Dynamic Ro
   * [Part IV: CapsNet Architecture](https://medium.com/@pechyonkin/part-iv-capsnet-architecture-6a64422f7dce)
 * [Uncovering the Intuition behind Capsule Networks and Inverse Graphics: Part I](https://hackernoon.com/uncovering-the-intuition-behind-capsule-networks-and-inverse-graphics-part-i-7412d121798d)
 * [naturomics/CapsNet-Tensorflow](https://github.com/naturomics/CapsNet-Tensorflow)
+* [Cortical memory](http://www.scholarpedia.org/article/Cortical_memory)
 * [Capsule Network Performance on Complex Data](https://arxiv.org/pdf/1712.03480.pdf)
