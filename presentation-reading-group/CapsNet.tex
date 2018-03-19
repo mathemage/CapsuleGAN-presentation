@@ -100,6 +100,13 @@
       \end{equation}
     \end{frame}
 
+    \begin{frame}{Total Input}
+      \begin{equation}
+        {\bf s}_j = \sum_i c_{ij} {\bf \hat{u}}_{j|i}
+        \label{eq:total-input}
+      \end{equation}
+    \end{frame}
+
     \begin{frame}{Squashing}
       \begin{equation}
         {\bf v}_j = \frac{||{\bf s}_j||^2}{1+||{\bf s}_j||^2} \frac{{\bf s}_j}{||{\bf s}_j||}
@@ -124,7 +131,7 @@
           \pause
           \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{eq:softmax}}
           \pause
-          \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$
+          \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$ \Comment{total input from Eq.~\ref{eq:total-input}}
           \pause
           \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{eq:squash}}
           \pause
