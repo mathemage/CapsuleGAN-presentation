@@ -100,6 +100,14 @@
       \end{equation}
     \end{frame}
 
+    \begin{frame}{Squashing}
+      \begin{equation}
+        {\bf v}_j = \frac{||{\bf s}_j||^2}{1+||{\bf s}_j||^2} \frac{{\bf s}_j}{||{\bf s}_j||}
+        \label{eq:squash}
+      \end{equation}
+      % TODO add screenshot https://cdn-images-1.medium.com/max/1000/1*RB03q9MINVgRPK_VBcBnsg.png
+    \end{frame}
+
     \begin{frame}{Routing Algorithm}
       \begin{algorithm}[H]
         \caption{Dynamic Routing between Capsules}
@@ -115,8 +123,7 @@
           \pause
           \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$
           \pause
-          % TODO fix missing \ref
-          \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{squash}}
+          \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{eq:squash}}
           \pause
           \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets b_{ij} + {\bf \hat{u}}_{j|i} . {\bf v}_j$
           \pause
