@@ -93,6 +93,13 @@
   {
     \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
 
+    \begin{frame}{Routing Softmax}
+      \begin{equation}
+        c_{ij} = \frac{\exp(b_{ij})}{\sum_k \exp(b_{ik})}
+        \label{eq:softmax}
+      \end{equation}
+    \end{frame}
+
     \begin{frame}{Routing Algorithm}
       \begin{algorithm}[H]
         \caption{Dynamic Routing between Capsules}
@@ -104,8 +111,7 @@
           \pause
           \For{$r$ iterations}
           \pause
-          % TODO fix missing \ref
-          \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{softmax}}
+          \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{eq:softmax}}
           \pause
           \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$
           \pause
