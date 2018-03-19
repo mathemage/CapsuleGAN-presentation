@@ -188,6 +188,30 @@
   \section{Capsule Network}
 
   \subsection{Loss}
+  {
+    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+
+    \begin{frame}{Margin Loss \\
+        \tiny for Digit Existence}
+      For each digit capsule $k$, its loss $L_k$ is:
+      \pause
+      % TODO reformulate with "iff"s
+      \begin{equation}
+        L_k = T_k \ \max(0, m^{+} - ||{\bf v}_k||)^2 + \lambda \ (1-T_k) \ \max(0, ||{\bf v}_k|| - m^{-})^2
+        \label{eq:digit-loss}
+      \end{equation}
+      where
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item $T_k = 1$ iff a digit of class $k$ is present
+        \item $m^{+} = 0.9$
+        \item $m^{-} = 0.1$
+        \item $\lambda = 0.5$ is down-weighting of the loss for absent digit classes.
+          {\tiny It stops the initial learning from shrinking the lengths of the activity vectors.}
+        \item The total loss is the sum of the losses of all digit capsules.
+      \end{itemize}
+    \end{frame}
+  }
 
   \subsection{Architecture}
   {
