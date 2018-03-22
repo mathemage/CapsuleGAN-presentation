@@ -88,12 +88,6 @@
   \subsection{What is a capsule?}
   {
     \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
-
-    \begin{frame}{Capsule Schema with Routing}
-      \begin{center}
-        \includegraphics[width=\textwidth]{../img/capsRouting.png}
-      \end{center}
-    \end{frame}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -130,7 +124,18 @@
   {
     \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
 
+    \begin{frame}{Capsule Schema with Routing}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsRouting.png}
+      \end{center}
+    \end{frame}
+
     \begin{frame}{Routing Softmax}
+      \begin{center}
+        \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
+      \end{center}
+      \pause
+
       \begin{equation}
         c_{ij} = \frac{\exp(b_{ij})}{\sum_k \exp(b_{ik})}
         \label{eq:softmax}
@@ -138,6 +143,11 @@
     \end{frame}
 
     \begin{frame}{Prediction Vectors}
+      \begin{center}
+        \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
+      \end{center}
+      \pause
+
       \begin{equation}
         {\bf \hat{u}}_{j|i} = {\bf W}_{ij}{\bf u}_i 
         \label{eq:predict-vecs}
@@ -145,6 +155,11 @@
     \end{frame}
 
     \begin{frame}{Total Input}
+      \begin{center}
+        \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
+      \end{center}
+      \pause
+
       \begin{equation}
         {\bf s}_j = \sum_i c_{ij} {\bf \hat{u}}_{j|i}
         \label{eq:total-input}
@@ -152,17 +167,27 @@
     \end{frame}
 
     \begin{frame}{Squashing}
+      \begin{center}
+        \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
+      \end{center}
+      \pause
+
       \begin{equation}
         {\bf v}_j = \frac{||{\bf s}_j||^2}{1+||{\bf s}_j||^2} \frac{{\bf s}_j}{||{\bf s}_j||}
         \label{eq:squash}
       \end{equation}
       \pause
       \begin{center}
-        \includegraphics[width=\textwidth]{../img/squashing.png}
+        \includegraphics[width=.7\textwidth]{../img/squashing.png}
       \end{center}
     \end{frame}
 
     \begin{frame}{Routing Algorithm}
+      \begin{center}
+        \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
+      \end{center}
+      \pause
+
       \begin{algorithm}[H]
         \caption{Dynamic Routing between Capsules}
         \scriptsize
