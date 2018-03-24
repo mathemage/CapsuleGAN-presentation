@@ -34,6 +34,7 @@
 \DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\epiParSpace}{\vskip 1.5ex}
 \newcommand{\p}{\mathbf{p}}
+\newcommand{\colorcite}{\color{gray!35}}
 
 \title{Dynamic Routing Between Capsules}
 \subtitle{by S. Sabour, N. Frosst and G. Hinton (NIPS 2017)}
@@ -57,7 +58,7 @@
 
   \section{Motivation}
   {
-    \setbeamertemplate{frame footer}{\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b}}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b}}
 
     \begin{frame}{Geometric Relationships between the Whole and Its Parts}
       \begin{center}
@@ -76,7 +77,7 @@
 
   \subsection{CapsNets vs ConvNets}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{Where ConvNets Ends... And CapsNets Begins...}
       \begin{center}
@@ -87,7 +88,7 @@
 
   \subsection{What is a capsule?}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,7 +97,7 @@
 
   \subsection{Algorithm}
   {
-    \setbeamertemplate{frame footer}{\url{https://www.oreilly.com/ideas/introducing-capsule-networks}}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://www.oreilly.com/ideas/introducing-capsule-networks}}
 
     \begin{frame}{Routing by an Agreement: High-Dimensional Coincidence}
       \pause
@@ -122,7 +123,7 @@
   }
 
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{Capsule Schema with Routing}
       \begin{center}
@@ -215,7 +216,7 @@
   }
   
   {
-    \setbeamertemplate{frame footer}{\url{https://youtu.be/rTawFwUvnLE}}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://youtu.be/rTawFwUvnLE}}
 
     \usebackgroundtemplate{
       \includegraphics[height=\paperheight]{../img/hi-dim-coincidence-hinton.png}
@@ -225,7 +226,7 @@
   }
 
   {
-    \setbeamertemplate{frame footer}{\url{https://github.com/naturomics/CapsNet-Tensorflow}}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://github.com/naturomics/CapsNet-Tensorflow}}
 
     \usebackgroundtemplate{
       \includegraphics[width=\paperwidth]{../img/capsuleVSneuron.png}
@@ -236,7 +237,7 @@
 
   \subsection{Routing Iterations}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{Average Change of Each Routing Logit $b_{ij}$ \\
         \tiny (by each routing iteration during training)}
@@ -271,7 +272,7 @@
 
   \subsection{Loss}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{Margin Loss \\
         \tiny for Digit Existence}
@@ -297,7 +298,7 @@
 
   \subsection{Architecture}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{Simple CapsNet with 3 Layers}
       \begin{center}
@@ -318,7 +319,7 @@
 
   \subsection{MNIST}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{MNIST Reconstructions (CapsNet, 3 routing iterations)}
       \begin{tabular}
@@ -355,7 +356,7 @@
 
   \subsection{MultiMNIST}
   {
-    \setbeamertemplate{frame footer}{[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
     \begin{frame}{MultiMNIST Reconstructions (CapsNet, 3 routing iterations)}
       \begin{center}
