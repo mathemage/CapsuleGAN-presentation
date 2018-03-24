@@ -9,6 +9,7 @@
 \usepackage{algorithm}      % algorithm
 \usepackage[noend]{algpseudocode} % algorithm
 \usepackage{bm}             % bold in math
+\usepackage{mathtools}      % dcases*
 
 %%% Bibliography
 \usepackage[backend=bibtex, style=authoryear]{biblatex}
@@ -278,15 +279,16 @@
         \tiny for Digit Existence}
       For each digit capsule $k$, its loss $L_k$ is:
       \pause
-      % TODO reformulate with "iff"s
-      \begin{equation}
-        L_k = T_k \ \max(0, m^{+} - ||{\bf v}_k||)^2 + \lambda \ (1-T_k) \ \max(0, ||{\bf v}_k|| - m^{-})^2
-        \label{eq:digit-loss}
-      \end{equation}
+      \begin{equation*}
+        L_k =
+        \begin{dcases*} 
+          \max(0, m^{+} - ||{\bf v}_k||)^2            & iff a digit of class $k$ is present \\
+          \lambda \max(0, ||{\bf v}_k|| - m^{-})^2    & otherwise
+        \end{dcases*}
+      \end{equation*}
       where
       \pause
       \begin{itemize}[<+- | alert@+>]
-        \item $T_k = 1$ iff a digit of class $k$ is present
         \item $m^{+} = 0.9$
         \item $m^{-} = 0.1$
         \item $\lambda = 0.5$ is down-weighting of the loss for absent digit classes.
