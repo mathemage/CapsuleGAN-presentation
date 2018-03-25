@@ -350,17 +350,27 @@
 
   \subsection{Loss}
   {
-    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/@pechyonkin/part-iv-capsnet-architecture-6a64422f7dce}}
 
     \begin{frame}{Margin Loss \\
-        \tiny for Digit Existence}
-      For each digit capsule $k$, its loss $L_k$ is:
+        \tiny for a Digit Existence}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsnet-loss-details.png}
+      \end{center}
+    \end{frame}
+  }
+
+  {
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
+    \begin{frame}{Margin Loss \\
+        \tiny to Train the Whole Encoder}
+      In other words, each DigitCaps $c$ has loss:
       \pause
       \begin{equation*}
-        L_k =
+        L_c =
         \begin{dcases*} 
-          \max(0, m^{+} - ||{\bf v}_k||)^2            & iff a digit of class $k$ is present \\
-          \lambda \max(0, ||{\bf v}_k|| - m^{-})^2    & otherwise
+          \max(0, m^{+} - ||{\bf v}_c||)^2            & iff a digit of class $k$ is present \\
+          \lambda \max(0, ||{\bf v}_c|| - m^{-})^2    & otherwise
         \end{dcases*}
       \end{equation*}
       where
