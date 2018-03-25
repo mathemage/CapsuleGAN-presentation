@@ -212,11 +212,11 @@
           \pause
           \For{$r$ iterations}
           \pause
-          \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} computes Eq.~\ref{eq:softmax}}
+          \State for all capsule $i$ in layer $l$: ${\bf c}_i \gets \texttt{softmax}({\bf b}_i)$ \Comment{\texttt{softmax} from Eq.~\ref{eq:softmax}}
           \pause
           \State for all capsule $j$ in layer $(l+1)$: ${\bf s}_j \gets \sum_i{c_{ij}{\bf \hat u}_{j|i}}$ \Comment{total input from Eq.~\ref{eq:total-input}}
           \pause
-          \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} computes Eq.~\ref{eq:squash}}
+          \State for all capsule $j$ in layer $(l+1)$: ${\bf v}_j \gets \texttt{squash}({\bf s}_j)$ \Comment{\texttt{squash} from Eq.~\ref{eq:squash}}
           \pause
           \State for all capsule $i$ in layer $l$ and capsule $j$ in layer $(l+1)$: $b_{ij} \gets b_{ij} + {\bf \hat{u}}_{j|i} . {\bf v}_j$
           \pause
@@ -314,13 +314,13 @@
   {
     \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
 
-    \begin{frame}{Simple CapsNet with 3 Layers}
+    \begin{frame}{Encoder: CapsNet with 3 Layers}
       \begin{center}
         \includegraphics[width=\textwidth]{../img/capsulearch.png}
       \end{center}
     \end{frame}
 
-    \begin{frame}{Decoder to Reconstruct a Digit from DigitCaps}
+    \begin{frame}{Decoder: Reconstructing a Digit from DigitCaps}
       \begin{center}
         \includegraphics[width=\textwidth]{../img/reconsArch.png}
       \end{center}
