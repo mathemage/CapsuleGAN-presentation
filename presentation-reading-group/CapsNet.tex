@@ -306,8 +306,8 @@
       \pause
 
       \begin{itemize}[<+- | alert@+>]
-        \item input: $20 \times 20 \times 256$
-        \item output: $6 \times 6 \times 8 \times 32$
+        \item input: $28 \times 28$ image (one color channel)
+        \item output: $20 \times 20 \times 256$
         \item $256$ kernels with size of $9 \times 9 \times 1$ 
         \item stride $1$
         \item ReLU activation
@@ -324,7 +324,7 @@
         \item input: $20 \times 20 \times 256$ \\
           {\tiny basic features detected by the convolutional layer}
         \item output: $6 \times 6 \times 8 \times 32$ \\
-          {\tiny vector (activation) outputs of capsules}
+          {\tiny vector (activation) outputs of primary capsules}
         \item $32$ primary capsules
         \item each applies eight $9 \times 9 \times 256$ convolutional kernels \\
           {\tiny to the $20 \times 20 \times 256$ input to produce $6 \times 6 \times 8$ output}
@@ -342,7 +342,7 @@
           {\tiny $(6 \times 6 \times 32)$-many $8$-dimensional vector activations}
         \item output: $16 \times 10$ \\
         \item $10$ digit capsules
-        \item input vectors gets their own $8x16$ weight matrix \\
+        \item input vectors gets their own $8 \times 16$ weight matrix $W_{ij}$ \\
           {\tiny that maps $8$-dimensional input space to the $16$-dimensional capsule output space}
       \end{itemize}
     \end{frame}
