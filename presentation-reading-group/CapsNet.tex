@@ -442,6 +442,20 @@
         \item forces capsules to learn features useful for reconstruction
       \end{itemize}
     \end{frame}
+
+    \begin{frame}{Decoder: Layers}
+      \begin{center}
+        \includegraphics[width=.8\textwidth]{../img/reconsArch.png}
+      \end{center}
+      \pause
+
+      \begin{itemize}[<+- | alert@+>]
+        \item Layer 4: from $16 \times 10$ input to $512$ output, ReLU activations
+        \item Layer 5: from $512$ input to $1024$ output, ReLU activations
+        \item Layer 6: from $1024$ input to $784$ output, sigmoid activations \\
+          {\tiny (after reshaping it produces a $(28 \times 28)$-pixels decoded image)}
+      \end{itemize}
+    \end{frame}
   }
 
 
