@@ -299,7 +299,7 @@
       \end{itemize}
     \end{frame}
 
-    \begin{frame}{Encoder Layer 1: (Standard) Convolutional layer}
+    \begin{frame}{Encoder Layer 1: (Standard) Convolutional Layer}
       \begin{center}
         \includegraphics[width=\textwidth]{../img/capsulearch.png}
       \end{center}
@@ -311,6 +311,21 @@
         \item $256$ kernels with size of $9 \times 9 \times 1$ 
         \item stride $1$
         \item ReLU activation
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Encoder Layer 2: PrimaryCaps}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsulearch.png}
+      \end{center}
+      \pause
+
+      \begin{itemize}[<+- | alert@+>]
+        \item input: $20 \times 20 \times 256$ tensor \\
+          {\tiny basic features detected by the convolutional layer}
+        \item output: $6 \times 6 \times 8 \times 32$ tensor \\
+          {\tiny vector (activation) outputs of capsules}
+        \item $32$ primary capsules
       \end{itemize}
     \end{frame}
   }
