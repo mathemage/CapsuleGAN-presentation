@@ -294,8 +294,23 @@
       \pause
 
       \begin{itemize}[<+- | alert@+>]
-        \item input: 28 by 28 MNIST digit image
-        \item output: 16-dimensional vector of instantiation parameters
+        \item input: $28$ by $28$ MNIST digit image
+        \item output: $16$-dimensional vector of instantiation parameters
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Encoder Layer 1: (Standard) Convolutional layer}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsulearch.png}
+      \end{center}
+      \pause
+
+      \begin{itemize}[<+- | alert@+>]
+        \item input: $28 \times 28$ image ($1$ color channel)
+        \item output: $16$-dimensional vector of instantiation parameters
+        \item $256$ kernels with size of $9 \times 9 \times 1$ 
+        \item stride $1$
+        \item ReLU activation
       \end{itemize}
     \end{frame}
   }
