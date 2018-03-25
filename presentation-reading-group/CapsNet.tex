@@ -366,26 +366,47 @@
     \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
     \begin{frame}{Margin Loss \\
         \tiny to Train the Whole Encoder}
-      In other words, each DigitCaps $c$ has loss:
+      In other words, each DigitCap $c$ has loss:
       \pause
       \begin{equation*}
         L_c =
         \begin{dcases*} 
-          \max(0, m^{+} - ||{\bf v}_c||)^2            & iff a digit of class $k$ is present \\
-          \lambda \max(0, ||{\bf v}_c|| - m^{-})^2    & otherwise
+          \max(0, m^{+} - ||{\bf v}_c||)^2            & iff a digit of class $c$ is present, \\
+          \lambda \max(0, ||{\bf v}_c|| - m^{-})^2    & otherwise.
         \end{dcases*}
       \end{equation*}
-      where
       \pause
       \begin{itemize}[<+- | alert@+>]
-        \item $m^{+} = 0.9$
-        \item $m^{-} = 0.1$
+        \item $m^{+} = 0.9$: \\
+          {\tiny Loss is $0$ iff the \textbf{correct} DigitCap predicts the correct label with probability $\ge 0.9$.}
+        \item $m^{-} = 0.1$: \\
+          {\tiny Loss is $0$ iff the \textbf{mismatching} DigitCap predicts an incorrect label with probability $\le 0.1$.}
         \item $\lambda = 0.5$ is down-weighting of the loss for absent digit classes.
           {\tiny It stops the initial learning from shrinking the lengths of the activity vectors.}
-        \item The total loss is the sum of the losses of all digit capsules.
+        \item Squares?
+          {\tiny Because there are $L_2$ norms in the loss function?}
+        \item The total loss is \textbf{the sum of the losses} of all digit capsules.
       \end{itemize}
     \end{frame}
   }
+
+  {
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/@pechyonkin/part-iv-capsnet-architecture-6a64422f7dce}}
+
+    \begin{frame}{Margin Loss \\
+        \tiny Function Value for Positive and for Negative Class}
+      \begin{itemize}
+        \item {\tiny Loss is $0$ iff the \textbf{correct} DigitCap predicts the correct label with probability $\ge 0.9$.}
+        \item {\tiny Loss is $0$ iff the \textbf{mismatching} DigitCap predicts an incorrect label with probability $\le 0.1$.}
+      \end{itemize}
+      \pause
+
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsnet-loss-plots.png}
+      \end{center}
+    \end{frame}
+  }
+
 
   \subsection{Architecture: Decoder}
   {
