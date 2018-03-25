@@ -321,13 +321,29 @@
       \pause
 
       \begin{itemize}[<+- | alert@+>]
-        \item input: $20 \times 20 \times 256$ tensor \\
+        \item input: $20 \times 20 \times 256$ \\
           {\tiny basic features detected by the convolutional layer}
-        \item output: $6 \times 6 \times 8 \times 32$ tensor \\
+        \item output: $6 \times 6 \times 8 \times 32$ \\
           {\tiny vector (activation) outputs of capsules}
         \item $32$ primary capsules
         \item each applies eight $9 \times 9 \times 256$ convolutional kernels \\
           {\tiny to the $20 \times 20 \times 256$ input to produce $6 \times 6 \times 8$ output}
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Encoder Layer 3: DigitCaps}
+      \begin{center}
+        \includegraphics[width=\textwidth]{../img/capsulearch.png}
+      \end{center}
+      \pause
+
+      \begin{itemize}[<+- | alert@+>]
+        \item input: $6 \times 6 \times 8 \times 32$ \\
+          {\tiny $(6 \times 6 \times 32)$-many $8$-dimensional vector activations}
+        \item output: $16 \times 10$ \\
+        \item $10$ digit capsules
+        \item input vectors gets their own $8x16$ weight matrix \\
+          {\tiny that maps $8$-dimensional input space to the $16$-dimensional capsule output space}
       \end{itemize}
     \end{frame}
   }
