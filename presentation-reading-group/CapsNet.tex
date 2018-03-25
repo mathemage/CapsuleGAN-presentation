@@ -426,10 +426,21 @@
   \subsection{Architecture: Decoder}
   {
     \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
-    \begin{frame}{Decoder: Reconstructing a Digit from DigitCaps}
+
+    \begin{frame}{Decoder: 3 Fully Connected Layers}
       \begin{center}
-        \includegraphics[width=\textwidth]{../img/reconsArch.png}
+        \includegraphics[width=.8\textwidth]{../img/reconsArch.png}
       \end{center}
+      \pause
+
+      Decoder is used for regularization:
+      \begin{itemize}[<+- | alert@+>]
+        \item decodes input from DigitCaps \\
+          {\tiny to recreate an image of a $(28 \times 28)$-pixels digit}
+        \item with the loss function being the Euclidean distance         % TODO -> show reconstructions
+        \item ignores the negative classes
+        \item forces capsules to learn features useful for reconstruction
+      \end{itemize}
     \end{frame}
   }
 
