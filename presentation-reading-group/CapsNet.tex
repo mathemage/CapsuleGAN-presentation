@@ -831,23 +831,31 @@
   \section{Conclusion}
 
   {
-    \setbeamertemplate{frame footer}{[\cite{Silver2017AlphaZero}]}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b}}
 
-    \begin{frame}{Summary}
+    \begin{frame}{}
       Benefits:
       \begin{itemize}[<+- | alert@+>]
-        \item Capsules introduce a new building block that can be used in deep learning to better model hierarchical relationships
+        \item a new building block usable in deep learning to better model \texbf{hierarchical relationships}
         \item representations similar to scene graphs in computer graphics
-        \item there was no algorithm that allowed to implement and successfully learn a capsule network
-        \item One of the reasons is that computers were just not powerful enough in the pre-GPU-based era before around 2012
-        \item Another benefit of the capsule approach is that it is capable of learning to achieve state-of-the art performance by only using a fraction of the data that a CNN would use
-        \item to learn to tell digits apart, the human brain needs to see only a couple of dozens of examples, hundreds at most. CNNs, on the other hand, need tens of thousands of examples
+        \item no algorithm to implement and train a capsule network:
+          \begin{itemize}[<+- | alert@+>]
+              \tiny
+            \item now \textbf{dynamic routing algorithm}
+            \item one of the reasons: computers not powerful enough in the pre-GPU-based era
+          \end{itemize}
+        \item capable of learning to achieve \textbf{state-of-the art} performance by only using \textbf{a~fraction of the data} compared to CNN
+          \begin{itemize}[<+- | alert@+>]
+              \tiny
+            \item task of telling digits apart: the human brain needs a couple of dozens of examples (hundreds at most).
+            \item On the other hand, CNNs typically need tens of thousands of them.
+          \end{itemize}
       \end{itemize}
       \pause
 
       Downsides:
       \begin{itemize}[<+- | alert@+>]
-        \item Current implementations are much slower than other modern deep learning models.
+        \item current implementations: much slower than other modern deep learning models
       \end{itemize}
     \end{frame}
   }
