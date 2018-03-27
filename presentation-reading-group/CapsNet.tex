@@ -230,10 +230,23 @@
 
   \subsection{What is a capsule?}
   {
-    \setbeamertemplate{frame footer}{\colorcite[\cite{Hinton2011transforming}]}
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-ii-how-capsules-work-153b6ade9f66}}
 
     \begin{frame}{What Is a Capsule?}
+      a~group of neurons that:
+      \begin{itemize}[<+- | alert@+>]
+        \item perform some complicated \textbf{internal computations} on their inputs
+        \item encapsulate their results into a~\textbf{small vector} of highly informative outputs
+        \item recognize an implicitly defined visual entity (over a~limited domain of~viewing conditions and deformations)
+        \item encode the \textbf{probability} of the entity being present
+        \item encode \textbf{instantiation parameters} \\
+          {\tiny pose, lighting, deformation relative to entity's (implicitly defined) canonical version}
+      \end{itemize}
     \end{frame}
+  }
+
+  {
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Hinton2011transforming}]}
 
     \begin{frame}{Previous Version of Capsules \\
         \tiny for illustration (``Transforming Auto-Encoders'' [\cite{Hinton2011transforming}])}
