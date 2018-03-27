@@ -820,30 +820,6 @@
         \item about what standard convolutional nets achieved when they were first applied to CIFAR10 (Zeiler and Fergus [2013]) % TODO replace citation
       \end{itemize}
     \end{frame}
-
-    \begin{frame}{Results on Other Datasets \\
-        \tiny smallNORB (LeCun et al. [2004])} % TODO replace citation
-      \begin{itemize}[<+- | alert@+>]
-        \item $2.7 \%$ test error
-        \item $96 \times 96$ stereo grey-scale images \\
-          {\tiny resized to $48 \times 48$;
-            during training processed random $32 \times 32$ crops;
-            during test the central $32 \times 32$ patch}
-        \item same CapsNet architecture as for MNIST
-        \item on-par with the state-of-the-art (Ciresan et al. [2011]) % TODO replace citation
-      \end{itemize}
-    \end{frame}
-
-    \begin{frame}{Results on Other Datasets \\
-        \tiny SVHN (Netzer et al. [2011])} % TODO replace citation
-      \begin{itemize}[<+- | alert@+>]
-        \item $4.3 \%$ test error
-        \item only 73257 images!
-        \item the number of first convolutional layer channels reduced to 64
-        \item the primary capsule layer: to 16 $6D$-capsules 
-        \item final capsule layer: $8D$-capsules
-      \end{itemize}
-    \end{frame}
   }
 
   \subsection{smallNORB}
@@ -870,6 +846,34 @@
   \begin{frame}[standout]
     Backup Slides
   \end{frame}
+
+  {
+    \setbeamertemplate{frame footer}{\colorcite[\cite{Sabour2017dynamic}]}
+
+    \begin{frame}{Results on Other Datasets \\
+        \tiny smallNORB (LeCun et al. [2004])} % TODO replace citation
+      \begin{itemize}[<+- | alert@+>]
+        \item $2.7 \%$ test error
+        \item $96 \times 96$ stereo grey-scale images \\
+          {\tiny resized to $48 \times 48$;
+            during training processed random $32 \times 32$ crops;
+            during test the central $32 \times 32$ patch}
+        \item same CapsNet architecture as for MNIST
+        \item on-par with the state-of-the-art (Ciresan et al. [2011]) % TODO replace citation
+      \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Results on Other Datasets \\
+        \tiny SVHN (Netzer et al. [2011])} % TODO replace citation
+      \begin{itemize}[<+- | alert@+>]
+        \item $4.3 \%$ test error
+        \item only 73257 images!
+        \item the number of first convolutional layer channels reduced to 64
+        \item the primary capsule layer: to 16 $6D$-capsules 
+        \item final capsule layer: $8D$-capsules
+      \end{itemize}
+    \end{frame}
+  }
 
   % TODO display (I), (II) instead of i, ii
   \begin{frame}[allowframebreaks]{Further Reading}
