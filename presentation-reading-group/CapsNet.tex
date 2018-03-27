@@ -788,6 +788,27 @@
         \end{tabular}
       \end{center}
     \end{frame}
+
+    \begin{frame}{Results on MNIST and MultiMNIST}
+      CapsNet classification test accuracy:
+      \pause
+
+      \begin{center}
+        \begin{tabular}{c c c c c}
+          \hline
+          Method   & Routing & Reconstruction & MNIST (\%)                & MultiMNIST (\%) \\
+          \hline
+          Baseline & -       & -              & $0.39$                    & $8.1$      \\
+          CapsNet  & 1       & no             & $0.34_{\pm 0.032}$        & -          \\
+          CapsNet  & 1       & yes            & $0.29_{\pm 0.011}$        & $7.5$      \\
+          CapsNet  & 3       & no             & $0.35_{\pm 0.036}$        & -          \\
+          CapsNet  & 3       & yes            & $\bm{0.25}_{\pm 0.005}$   & $\bm{5.2}$ \\
+          \hline
+        \end{tabular}
+
+        {\tiny (The MNIST average and standard deviation results are reported from $3$ trials.)}
+      \end{center}
+    \end{frame}
   }
 
   \subsection{CIFAR10}
