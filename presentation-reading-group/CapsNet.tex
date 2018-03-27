@@ -810,8 +810,8 @@
       \end{center}
     \end{frame}
 
-    \begin{frame}{Results on Other Datasets}
-      CIFAR10:
+    \begin{frame}{Results on Other Datasets \\
+        \tiny CIFAR10}
       \begin{itemize}[<+- | alert@+>]
         \item $10.6 \%$ test error
         \item ensemble of 7 models
@@ -819,7 +819,19 @@
         \item $24 \times 24$ patches of the image
         \item about what standard convolutional nets achieved when they were first applied to CIFAR10 (Zeiler and Fergus [2013]) % TODO replace citation
       \end{itemize}
+    \end{frame}
 
+    \begin{frame}{Results on Other Datasets \\
+        \tiny smallNORB (LeCun et al. [2004])} % TODO replace citation
+      \begin{itemize}[<+- | alert@+>]
+        \item $2.7 \%$ test error
+        \item $96 \times 96$ stereo grey-scale images \\
+          {\tiny resized to $48 \times 48$;
+            during training processed random $32 \times 32$ crops;
+            during test the central $32 \times 32$ patch}
+        \item same CapsNet architecture as for MNIST
+        \item on-par with the state-of-the-art (Ciresan et al. [2011]) % TODO replace citation
+      \end{itemize}
     \end{frame}
   }
 
