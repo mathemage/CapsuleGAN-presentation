@@ -63,10 +63,20 @@
 
     \begin{frame}{Part-Whole Geometric Relationships \\
         \tiny ``What is wrong with convolutional neural nets?''}
+      \pause
       \begin{center}
-        \includegraphics[width=\textwidth]{../img/ambiguous-faces.png}
-        {\tiny To a CNN, both pictures are similar, since they both contain similar elements.}
+        \includegraphics[width=.9\textwidth]{../img/ambiguous-faces.png}
       \end{center}
+
+      \vskip -2em
+      \tiny
+      To a~CNN (with MaxPool)...
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item ...both pictures are similar, since they both contain similar elements.
+        \item ...a mere presence of objects can be a very \textbf{strong indicator} to consider a face in the image.
+        \item ...orientational and relative spatial relationships are not very important.
+      \end{itemize}
     \end{frame}
   }
 
@@ -88,7 +98,7 @@
       \vskip -1em
       \begin{enumerate}[a)]
         \item arrays of~geometrical objects
-        \item matrices representing their relative positions and orientations
+        \item matrices representing their relative positions and orientations (so-called \textbf{``poses''})
       \end{enumerate}
     \end{frame}
   }
