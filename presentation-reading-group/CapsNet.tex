@@ -525,9 +525,9 @@
       \pause
       \begin{itemize}[<+- | alert@+>]
         \item $m^{+} = 0.9$: \\
-          {\tiny Loss is $0$ iff the \textbf{correct} DigitCap predicts the correct label with probability $\ge 0.9$.}
+          {\tiny The loss is $0$ iff the \textbf{correct} DigitCap predicts the correct label with probability $\ge 0.9$.}
         \item $m^{-} = 0.1$: \\
-          {\tiny Loss is $0$ iff the \textbf{mismatching} DigitCap predicts an incorrect label with probability $\le 0.1$.}
+          {\tiny The loss is $0$ iff the \textbf{mismatching} DigitCap predicts an incorrect label with probability $\le 0.1$.}
         \item $\lambda = 0.5$ is down-weighting of the loss for absent digit classes.
           {\tiny It stops the initial learning from shrinking the lengths of the activity vectors.}
         \item Squares?
@@ -543,8 +543,8 @@
     \begin{frame}{Margin Loss \\
         \tiny Function Value for Positive and for Negative Class}
       \begin{itemize}
-        \item {\tiny Loss is $0$ iff the \textbf{correct} DigitCap predicts the correct label with probability $\ge 0.9$.}
-        \item {\tiny Loss is $0$ iff the \textbf{mismatching} DigitCap predicts an incorrect label with probability $\le 0.1$.}
+        \item {\tiny For the \textbf{correct} DigitCap, the loss is $0$ iff it predicts the correct label with probability $\ge 0.9$.}
+        \item {\tiny For the \textbf{mismatching} DigitCap, the loss is $0$ iff it predicts an incorrect label with probability $\le 0.1$.}
       \end{itemize}
       \pause
 
