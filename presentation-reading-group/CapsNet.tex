@@ -150,6 +150,27 @@
     \end{frame}
   }
 
+  {
+    \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-i-intuition-b4b559d1159b}}
+
+    \begin{frame}{Pose Equivariance and the Viewing Angle}
+      \pause
+      \Small
+      We have probably never seen these exact pictures, but we can still immediately recognize the object in it...
+      \begin{center}
+        \includegraphics[height=.5\textheight]{../img/statue-of-liberty.jpeg}
+      \end{center}
+
+      \pause
+      \tiny
+      \vskip -1em
+      \begin{itemize}[<+- | alert@+>]
+        \item internal representation in the brain: independent of the viewing angle
+        \item quite hard for a~CNN: no built-in understanding of~3D space
+        \item much easier for a~CapsNet: these relationships are explicitly modeled
+      \end{itemize}
+    \end{frame}
+  }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   \section{Capsule}
