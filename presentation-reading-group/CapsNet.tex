@@ -246,6 +246,24 @@
   }
 
   {
+    \setbeamertemplate{frame footer}{\colorcite\url{https://www.oreilly.com/ideas/introducing-capsule-networks}}
+
+    \begin{frame}{Output As A Vector}
+      \pause
+      \begin{center}
+        \includegraphics[height=.5\textheight]{../img/capsule-vector-output.png}
+      \end{center}
+
+      \begin{itemize}[<+- | alert@+>]
+        \item probability of presence: locally \textbf{invariant} \\
+          {\tiny E.g. if $0, 3, 2, 0, 0$ leads to $0, 1, 0, 0$, then $0, 0, 3, 2, 0$ should also lead to $0, 1, 0, 0$.}
+        \item instantiation parameters: \textbf{equivariant} \\
+          {\tiny E.g. if $0, 3, 2, 0, 0$ leads to $0, 1, 0, 0$, then $0, 0, 3, 2, 0$ might lead to $0, 0, 1, 0$.}
+      \end{itemize}
+    \end{frame}
+  }
+
+  {
     \setbeamertemplate{frame footer}{\colorcite[\cite{Hinton2011transforming}]}
 
     \begin{frame}{Previous Version of Capsules \\
