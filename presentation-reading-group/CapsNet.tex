@@ -809,9 +809,19 @@
         {\tiny (The MNIST average and standard deviation results are reported from $3$ trials.)}
       \end{center}
     \end{frame}
-  }
 
-  \subsection{CIFAR10}
+    \begin{frame}{Results on Other Datasets}
+      CIFAR10:
+      \begin{itemize}[<+- | alert@+>]
+        \item $10.6 \%$ test error
+        \item ensemble of 7 models
+        \item 3 routing iterations
+        \item $24 \times 24$ patches of the image
+        \item about what standard convolutional nets achieved when they were first applied to CIFAR10 (Zeiler and Fergus [2013]) % TODO replace citation
+      \end{itemize}
+
+    \end{frame}
+  }
 
   \subsection{smallNORB}
 
