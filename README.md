@@ -1,6 +1,6 @@
-# CapsNet-presentation
+# CapsuleGAN-presentation
 
-my [presentation](http://cyber.felk.cvut.cz/seminars/?event=1236) on [Dynamic Routing Between Capsules](https://arxiv.org/abs/1710.09829) for [Pattern Recognition and Computer Vision Reading Group](http://cmp.felk.cvut.cz/~toliageo/rg/index.html)
+my [presentation](https://github.com/ufal/npfl117/tree/master/1718-summer) on [CapsuleGAN: Generative Adversarial Capsule Network](https://arxiv.org/pdf/1802.06167.pdf) for [Deep Learning Seminar](https://ufal.mff.cuni.cz/courses/npfl117)
 
 ## Sources
 
@@ -23,3 +23,5 @@ my [presentation](http://cyber.felk.cvut.cz/seminars/?event=1236) on [Dynamic Ro
 * [naturomics/CapsNet-Tensorflow](https://github.com/naturomics/CapsNet-Tensorflow)
 * [Cortical memory](http://www.scholarpedia.org/article/Cortical_memory)
 * [Capsule Network Performance on Complex Data](https://arxiv.org/pdf/1712.03480.pdf)
+* CapsuleGAN
+  * [CapsuleGAN: Generative Adversarial Capsule Network](https://arxiv.org/pdf/1802.06167.pdf)
