@@ -1,0 +1,23 @@
+\section{Preliminaries}
+\label{sec:prelim}
+
+\subsection{Generative Adversarial Networks}
+Goodfellow et al.~\cite{bib:gan} introduced GANs as a framework for generative modeling of data through learning a transformation from points belonging to a simple prior distribution ($\mathbf{z} \sim p_z$) to those from the data distribution ($\mathbf{x} \sim p_{data}$). The framework is composed of two models that play an adversarial game: a generator and a discriminator. While the generator attempts to learn the aforementioned transformation $G(\mathbf{z})$, the discriminator acts as a critic $D(\cdot)$ determining whether the sample provided to it is from the generator's output distribution ($G(\mathbf{z}) \sim p_G$) or from the data distribution ($\mathbf{x} \sim p_{data}$), thus giving a scalar output ($y \in \{0, 1\}$). The goal of the generator is to fool the discriminator by generating samples that resemble those from the real data while that of the discriminator is to accurately distinguish between real and generated data. The two models, typically designed as neural networks, play an adversarial game with the objective as shown in Equation~\ref{eq:gan}.
+
+\begin{align}
+\min_{G} \max_{D} V(D, G) = \mathbb{E}_{\mathbf{x} \sim p_{data}(\mathbf{x})} \left [ \log D(\mathbf{x}) \right ] + \ \ \mathbb{E}_{\mathbf{z} \sim p_{z}(\mathbf{z})} \left [ \log (1 - D(G(\mathbf{z}))) \right ]
+\label{eq:gan}
+\end{align}
+
+\subsection{Capsule Networks}
+
+The concept of capsules was first introduced by Hinton et al.~\cite{bib:transauto} as a method for learning robust unsupervised representation of images. Capsules are locally invariant groups of neurons that learn to recognize the presence of visual entities and encode their properties into vector outputs, with the vector length (limited to being between zero and one) representing the presence of the entity. For example, each capsule can learn to identify certain objects or object-parts in images. Within the framework of neural networks, several capsules can be grouped together to form a capsule-layer where each unit produces a vector output instead of a (conventional) scalar activation.
+
+Sabour et al.~\cite{bib:capsnet} introduced a routing-by-agreement mechanism for the interaction of capsules within deep neural networks with several capsule-layers, which works by pairwise determination of the passage of information between capsules in successive layers. For each capsule $h_i^{(l)}$ in layer $l$ and each capsule $h_j^{(l + 1)}$ in the layer above, a coupling coefficient $c_{ij}$ is adjusted iteratively based on the agreement (cosine similarity) between $h_i$'s prediction of the output of $h_j$ and its actual output given the product of $c_{ij}$ and $h_i$'s activation. Thus, the coupling coefficients inherently decide how information flows between pairs of capsules. For a classification task involving $K$ classes, the final layer of the CapsNet can be designed to have $K$ capsules, each representing one class. Since the length of a capsule's vector output represents the presence of a visual entity, the length of each capsule in the final layer ($\left\lVert \mathbf{v_k} \right\rVert$) can then be viewed as the probability of the image belonging to a particular class ($k$). The authors introduce a margin loss $L_M$ for training CapsNets for multi-class classification, as show in Equation~\ref{eq:capsnet}:
+
+\begin{align}
+\label{eq:capsnet}
+L_M = \sum_{k=1}^{K} T_k \max (0, m^+ - \left\lVert \mathbf{v_k} \right\rVert)^2 + \lambda (1 - T_k) \max(0, \left\lVert \mathbf{v_k} \right\rVert - m^-)^2
+\end{align}
+
+where $T_k$ represents target labels, $m^+ = 0.9$, $m^- = 0.1$ and $\lambda = 0.5$, a down-weighting factor for preventing initial learning from shrinking the lengths of the capsule outputs in the final layer. The authors also add regularization to the network in the form of a weighted image reconstruction loss, where the vector outputs $\mathbf{v_k}$ of the final layer are presented as inputs to the reconstruction network.

@@ -1,0 +1,15 @@
+\section{Generative Adversarial Capsule Networks}
+\label{sec:capsgan}
+GANs have been mostly used for modeling the distribution of image data and associated attributes, as well as for other image-based applications like image-to-image translation~\cite{bib:im2im_tr} and image synthesis from textual descriptions~\cite{bib:im_synth}. The generator and the discriminator have conventionally been modeled as deep CNNs following the DCGAN guidelines~\cite{bib:dcgan}. Motivated by the stronger intuition behind and the superior performance of CapsNets with respect to CNNs~\cite{bib:capsnet}, we design our CapsuleGAN framework to incorporate capsule-layers instead of convolutional layers in the GAN discriminator, which fundamentally performs a two-class classification task.
+
+The CapsuleGAN discriminator is similar in architecture to the CapsNet model presented in~\cite{bib:capsnet}. 
+CapsNets, in general, have a large number of parameters because, firstly, each capsule produces a vector output instead of a single scalar and, secondly, each capsule has \emph{additional} parameters associated with all the capsules in the layer above it that are used for making predictions about their outputs. However, it is necessary to keep the number of parameters in the CapsuleGAN discriminator low due to two reasons: (1) CapsNets are very powerful models and can easily start harshly penalizing the generator  early on in the training process, which will cause the generator to either fail completely or suffer from mode collapse, and (2) current implementations of the dynamic routing algorithm are slow to run. It is important to note that first reason for keeping the number of parameters of the CapsNet low falls in line with the popular design of convolutional discriminators as relatively shallow neural networks with low numbers of relatively large-sized filters in their convolutional layers.
+
+The final layer of the CapsuleGAN discriminator contains a single capsule, the length of which represents the probability whether the discriminator's input is a real or a generated image. We use  margin loss $L_M$ instead of the conventional binary cross-entropy loss for training our CapsuleGAN model because $L_M$ works better for training CapsNets. Therefore, the objective of CapsuleGAN can be formulated as shown in Equation~\ref{eq:capsgan}.
+
+\begin{align}
+\min_{G} \max_{D} V(D, G) = \mathbb{E}_{\mathbf{x} \sim p_{data}(\mathbf{x})} \left [ -L_M(D(\mathbf{x}), \mathbf{T}=\mathbf{1}) \right ] + \ \ \mathbb{E}_{\mathbf{z} \sim p_{z}(\mathbf{z})} \left [ -L_M(D(G(\mathbf{z})), \mathbf{T}=\mathbf{0}) \right ]
+\label{eq:capsgan}
+\end{align}
+
+In practice, we train the generator to minimize $L_M(D(G(\mathbf{z})), \mathbf{T=1})$ instead of minimizing $-L_M(D(G(\mathbf{z})), \mathbf{T}=\mathbf{0})$. This essentially eliminates the down-weighting factor $\lambda$ in $L_M$ when training the generator, which does not contain any capsules.

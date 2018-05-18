@@ -1,0 +1,119 @@
+%%% CVPR Header
+% \documentclass[10pt,twocolumn,letterpaper]{article}
+
+% \usepackage{cvpr}
+% \usepackage{times}
+% \usepackage{epsfig}
+% \usepackage{graphicx}
+% \usepackage{amsmath}
+% \usepackage{amssymb}
+
+% % Include other packages here, before hyperref.
+
+% % If you comment hyperref and then uncomment it, you should delete
+% % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% % run, let it finish, and you should be clear).
+% \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \cvprfinalcopy % *** Uncomment this line for the final submission
+
+% % \def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
+% \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% % Pages are numbered in submission mode, and unnumbered in camera-ready
+% \ifcvprfinal\pagestyle{empty}\fi
+
+%----------------------------------------------------------------------------------------%
+
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+% \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading nips_2016
+%
+% to avoid loading the natbib package, add option nonatbib:
+\usepackage[nonatbib, final]{nips_2016}
+
+% \usepackage{nips_2016}
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+% \usepackage[final]{nips_2016}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{makecell}
+
+\newcolumntype{?}[1]{!{\vrule width #1}}
+
+\newcommand{\hbline}{\Xhline{2.5\arrayrulewidth}}
+
+\newcommand\nocell[1]{\multicolumn{#1}{c?{1.5pt}}{}}
+
+\setcellgapes{5pt}
+
+\usepackage{color}
+
+\begin{document}
+
+%%%%%%%%% TITLE
+\title{CapsuleGAN: Generative Adversarial \\Capsule Network}
+
+\author{
+Ayush Jaiswal, Wael AbdAlmageed, Yue Wu, Premkumar Natarajan\\
+USC Information Sciences Institute\\
+Marina del Rey, CA, USA\\
+{\tt\small \{ajaiswal, wamageed, yue\_wu, pnataraj\}@isi.edu}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+%%%%%%%%% ABSTRACT
+\begin{abstract}
+
+We present Generative Adversarial Capsule Network (CapsuleGAN), a framework that uses capsule networks (CapsNets) instead of the standard convolutional neural networks (CNNs) as discriminators within the generative adversarial network (GAN) setting, while modeling image data. We provide guidelines for designing CapsNet discriminators and the updated GAN objective function, which incorporates the CapsNet margin loss, for training CapsuleGAN models. We show that CapsuleGAN outperforms convolutional-GAN at modeling image data distribution on MNIST and CIFAR-10 datasets, evaluated on the generative adversarial metric and at semi-supervised image classification.
+   
+\end{abstract}
+
+%%%%%%%%% BODY TEXT
+\input{introduction}
+
+%-------------------------------------------------------------------------
+
+\input{related_work}
+
+%-------------------------------------------------------------------------
+
+\input{preliminaries}
+
+%-------------------------------------------------------------------------
+
+\input{capsgan}
+
+%-------------------------------------------------------------------------
+
+\input{eval}
+
+%-------------------------------------------------------------------------
+
+\input{conclusion}
+
+%-------------------------------------------------------------------------
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{references}
+}
+
+\end{document}
