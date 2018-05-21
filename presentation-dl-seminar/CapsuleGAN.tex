@@ -810,23 +810,43 @@ Charles University}
   {
     \setbeamertemplate{frame footer}{\colorcite(TODO)}
 
-    \begin{frame}{Randomly generated CIFAR-10 images}
+    \begin{frame}{MNIST}
+      \begin{figure}
+        \centering
+        \begin{subfigure}{.49\textwidth}
+          \centering
+          \includegraphics[width=0.8\textwidth]{../img/gan_mnist_randomly_generated.png}
+          \caption{GAN}
+          \label{fig:gan_mnist_randomly_generated}
+        \end{subfigure}
+        \begin{subfigure}{.49\textwidth}
+          \centering
+          \includegraphics[width=0.8\textwidth]{../img/capsgan_mnist_randomly_generated.png}
+          \caption{CapsuleGAN}
+          \label{fig:capsgan_mnist_randomly_generated}
+        \end{subfigure}
+        \label{fig:mnist_randomly_generated}
+        \caption{Randomly generated MNIST images}
+      \end{figure}
+    \end{frame}
+
+    \begin{frame}{CIFAR-10}
       \begin{figure}
         \centering
         \begin{subfigure}{.49\textwidth}
           \centering
           \includegraphics[width=0.8\textwidth]{../img/gan_cifar10_randomly_generated.png}
           \caption{GAN}
-          \label{fig:gan_mnist_randomly_generated}
+          \label{fig:gan_cifar10_randomly_generated}
         \end{subfigure}
         \begin{subfigure}{.49\textwidth}
           \centering
           \includegraphics[width=0.8\textwidth]{../img/capsgan_cifar10_randomly_generated.png}
           \caption{CapsuleGAN}
-          \label{fig:capsgan_mnist_randomly_generated}
+          \label{fig:capsgan_cifar10_randomly_generated}
         \end{subfigure}
-        \label{fig:mnist_randomly_generated}
-        \caption{Randomly generated MNIST images}
+        \label{fig:cifar10_randomly_generated}
+        \caption{Randomly generated CIFAR-10 images}
       \end{figure}
     \end{frame}
   }
