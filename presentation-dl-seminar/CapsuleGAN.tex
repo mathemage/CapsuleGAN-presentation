@@ -10,6 +10,7 @@
 \usepackage[noend]{algpseudocode} % algorithm
 \usepackage{bm}             % bold in math
 \usepackage{mathtools}      % dcases*
+\usepackage{subcaption}
 
 %%% Bibliography
 \usepackage[backend=bibtex, style=authoryear]{biblatex}
@@ -217,8 +218,6 @@ Charles University}
     (mathematically)
   \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
   \subsection{What is a capsule?}
   {
     \setbeamertemplate{frame footer}{\colorcite\url{https://medium.com/ai³-theory-practice-business/understanding-hintons-capsule-networks-part-ii-how-capsules-work-153b6ade9f66}}
@@ -292,8 +291,6 @@ Charles University}
     \begin{frame}[standout]
     \end{frame}
   }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   \subsection{Routing by an Agreement}
   {
@@ -437,8 +434,6 @@ Charles University}
       \pause
     \end{frame}
   }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
   \subsection{Capsule Network}
 
@@ -628,8 +623,6 @@ Charles University}
     \end{frame}
   }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
   % TODO show & compare w/ SotA methods
   \subsection{Capsule Networks: Experiments on MNIST}
   {
@@ -806,6 +799,35 @@ Charles University}
         \item $24 \times 24$ patches of the image
         \item about what standard convolutional nets achieved when they were first applied to CIFAR10 (Zeiler and Fergus [2013]) % TODO replace citation
       \end{itemize}
+    \end{frame}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \section{CapsuleGAN}
+
+  \subsection{Experiments}
+  {
+    \setbeamertemplate{frame footer}{\colorcite(TODO)}
+
+    \begin{frame}{Randomly generated CIFAR-10 images}
+      \begin{figure}
+        \centering
+        \begin{subfigure}{.49\textwidth}
+          \centering
+          \includegraphics[width=0.8\textwidth]{../img/gan_cifar10_randomly_generated.png}
+          \caption{GAN}
+          \label{fig:gan_mnist_randomly_generated}
+        \end{subfigure}
+        \begin{subfigure}{.49\textwidth}
+          \centering
+          \includegraphics[width=0.8\textwidth]{../img/capsgan_cifar10_randomly_generated.png}
+          \caption{CapsuleGAN}
+          \label{fig:capsgan_mnist_randomly_generated}
+        \end{subfigure}
+        \label{fig:mnist_randomly_generated}
+        \caption{Randomly generated MNIST images}
+      \end{figure}
     \end{frame}
   }
 
