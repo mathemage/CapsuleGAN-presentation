@@ -864,6 +864,21 @@ Charles University}
         \end{subfigure}
       \end{figure}
     \end{frame}
+
+    \begin{frame}{Semi-supervised classification: MNIST}
+      \begin{table}
+        \centering
+        \begin{tabular}{ c ?{1.5pt} c | c | c }
+          \hbline
+          \textbf{Model} & \multicolumn{3}{c}{\textbf{Error Rate}} \\
+          \hbline
+          \nocell{1} & n = 100 & n = 1,000 & n = 10,000 \\ \cline{2-4}
+          GAN & 0.2900 & 0.1539 & 0.0702 \\
+          CapsuleGAN & \textbf{0.2724} & \textbf{0.1142} & \textbf{0.0531} \\
+          \hbline
+        \end{tabular}
+      \end{table}
+    \end{frame}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
