@@ -51,6 +51,7 @@
 \newcommand{\hbline}{\Xhline{2.5\arrayrulewidth}}
 \newcommand\nocell[1]{\multicolumn{#1}{c?{1.5pt}}{}}
 \setcellgapes{5pt}
+\newcommand{\capsGANcitation}{(TODO)}
 
 
 \title{CapsuleGAN: Generative Adversarial Capsule Network}
@@ -821,11 +822,16 @@ Charles University}
 
   \section{CapsuleGAN}
 
+  \subsection{Loss Function}
+  {
+    \setbeamertemplate{frame footer}{\colorcite\capsGANcitation}
+  }
+
   \subsection{Experiments}
   {
-    \setbeamertemplate{frame footer}{\colorcite(TODO)}
+    \setbeamertemplate{frame footer}{\colorcite\capsGANcitation}
 
-    \begin{frame}{Randomly generated MNIST images}
+    \begin{frame}{Randomly Generated MNIST Images}
       \begin{figure}
         \pause
         \centering
