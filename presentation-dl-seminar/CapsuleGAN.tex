@@ -47,6 +47,11 @@
 \newcommand{\epiParSpace}{\vskip 1.5ex}
 \newcommand{\p}{\mathbf{p}}
 \newcommand{\colorcite}{\color{gray!35}}
+\newcolumntype{?}[1]{!{\vrule width #1}}
+\newcommand{\hbline}{\Xhline{2.5\arrayrulewidth}}
+\newcommand\nocell[1]{\multicolumn{#1}{c?{1.5pt}}{}}
+\setcellgapes{5pt}
+
 
 \title{CapsuleGAN: Generative Adversarial Capsule Network}
 \subtitle{by A. Jaiswal, W. AbdAlmageed, Y. Wu and P. Natarajan\\
