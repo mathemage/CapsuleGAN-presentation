@@ -879,6 +879,20 @@ Charles University}
         \end{tabular}
       \end{table}
     \end{frame}
+
+    \begin{frame}{Semi-supervised classification: CIFAR-10}
+      \begin{table}
+        \begin{tabular}{ c ?{1.5pt} c | c | c }
+          \hbline
+          \textbf{Model} & \multicolumn{3}{c}{\textbf{Error Rate}} \\
+          \hbline
+          \nocell{1} & n = 100 & n = 1,000 & n = 10,000 \\ \cline{2-4}
+          GAN & 0.8305 & 0.7587 & 0.7209 \\
+          CapsuleGAN & \textbf{0.7983} & \textbf{0.7496} & \textbf{0.7102} \\
+          \hbline
+        \end{tabular}
+      \end{table}
+    \end{frame}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
