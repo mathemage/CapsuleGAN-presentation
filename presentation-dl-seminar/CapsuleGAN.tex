@@ -825,6 +825,25 @@ Charles University}
   \subsection{Loss Function}
   {
     \setbeamertemplate{frame footer}{\colorcite\capsGANcitation}
+
+    \begin{frame}{Loss Function of CapsuleGAN}
+      \[
+        \begin{aligned}
+          \action<+->{\min_{G} \max_{D} &\ \ V(D, G) \\
+            &= \\}
+          \action<+->{\mathbb{E}_{\mathbf{x} \sim p_{data}(\mathbf{x})} \left [ -L_M(D(\mathbf{x}), \mathbf{T}=\mathbf{1}) \right ]}
+          \action<+->{&+ \mathbb{E}_{\mathbf{z} \sim p_{z}(\mathbf{z})} \left [ -L_M(D(G(\mathbf{z})), \mathbf{T}=\mathbf{0}) \right ]}
+        \end{aligned}
+      \]
+      \pause
+
+      In practice:
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item generator trained to minimize $L_M(D(G(\mathbf{z})), \mathbf{T=1})$ rather than $-L_M(D(G(\mathbf{z})), \mathbf{T}=\mathbf{0})$,
+        \item the down-weighting factor $\lambda$ in $L_M$ is eliminated (no capsules in the generator).
+      \end{itemize}
+    \end{frame}
   }
 
   \subsection{Experiments}
