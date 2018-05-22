@@ -1012,9 +1012,64 @@ Charles University}
       \pause
 
       Downsides:
+      \pause
       \begin{itemize}[<+- | alert@+>]
         \item current implementations: much slower than other modern deep learning models
       \end{itemize}
+    \end{frame}
+  }
+
+  {
+    \setbeamertemplate{frame footer}{\colorcite\capsGANcitation}
+
+    \begin{frame}{CapsuleGAN}
+      In summary:
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item active GAN research:
+          \begin{itemize}[<+- | alert@+>]
+            \item easier and more stable training
+            \item improving GAN itself
+          \end{itemize}
+        \item CapsuleGAN:
+          \begin{itemize}[<+- | alert@+>]
+            \item a GAN variant
+            \item CapsNets instead of CNNs as discriminators
+            \item design guidelines
+            \item updated objective function
+          \end{itemize}
+        \item CapsuleGANs outperform convolutional GANs:
+          \begin{itemize}[<+- | alert@+>]
+            \item according to the generative adversarial metric
+            \item at semi-supervised classification
+              \begin{itemize}[<+- | alert@+>]
+                \item with a~\emph{large number of~unlabeled} generated images
+                \item and a~\emph{small number of~real} labeled ones
+              \end{itemize}
+            \item on MNIST and CIFAR-10 datasets
+          \end{itemize}
+      \end{itemize}
+      \pause
+    \end{frame}
+
+    \begin{frame}{CapsuleGAN}
+      \begin{itemize}[<+- | alert@+>]
+        \item CapsNets as potential alternatives to CNNs in future GAN models:
+          \begin{itemize}[<+- | alert@+>]
+            \item for designing discriminators
+            \item for other inference modules
+          \end{itemize}
+      \end{itemize}
+      \pause
+
+      Future work:
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item theoretical analysis of~the margin loss in the GAN objective
+        \item incorporate GAN training tricks
+        \item CapsNets for encoders (in GAN variants like BiGAN)
+      \end{itemize}
+      \pause
     \end{frame}
   }
 
