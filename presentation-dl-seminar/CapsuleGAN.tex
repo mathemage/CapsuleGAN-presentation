@@ -51,8 +51,12 @@
 \newcommand{\hbline}{\Xhline{2.5\arrayrulewidth}}
 \newcommand\nocell[1]{\multicolumn{#1}{c?{1.5pt}}{}}
 \setcellgapes{5pt}
-\newcommand{\capsGANcitation}{(TODO)}
 
+\newcommand{\capsGANcitation}{(TODO)}
+\newcommand{\gamCitation}{
+  (TODO)
+  %\cite{bib:gam}
+}
 
 \title{CapsuleGAN: Generative Adversarial Capsule Network}
 \subtitle{by A. Jaiswal, W. AbdAlmageed, Y. Wu and P. Natarajan\\
@@ -888,6 +892,30 @@ Charles University}
           \label{fig:capsgan_cifar10_randomly_generated}
         \end{subfigure}
       \end{figure}
+    \end{frame}
+
+    \begin{frame}{Generative Adversarial Metrics\\
+        \tiny Im et al.~\gamCitation \url{https://github.com/jiwoongim/GRAN/battle.py}}
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item pairwise comparison between 2 GAN models $M_1 = (G_1, D_1)$ and $M_2 = (G_2, D_2)$ 
+        \item each generator against the opponent's discriminator:
+          \begin{itemize}[<+- | alert@+>]
+            \item $G_1$ against $D_2$
+            \item $G_2$ against $D_1$
+          \end{itemize}
+        \item \emph{classification accuracies} rather than \emph{errors} (numerical problems)
+      \end{itemize}
+      \pause
+
+      \begin{equation*}%\label{eq:gam1}
+        r_{samples} = \frac{A(D_{GAN}(G_{CapsuleGAN}(\mathbf{z})))}{A(D_{CapsuleGAN}(G_{GAN}(\mathbf{z})))}
+      \end{equation*}
+      \pause
+
+      \begin{equation*}%\label{eq:gam2}
+        r_{test} = \frac{A(D_{GAN}(\mathbf{x_{test}}))}{A(D_{CapsuleGAN}(\mathbf{x_{test}}))}
+      \end{equation*}
     \end{frame}
 
     \begin{frame}{Semi-Supervised Classification: MNIST}
