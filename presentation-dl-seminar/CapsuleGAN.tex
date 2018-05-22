@@ -52,6 +52,7 @@
 \newcommand\nocell[1]{\multicolumn{#1}{c?{1.5pt}}{}}
 \setcellgapes{5pt}
 
+\newcommand{\capsNetCitation}{[Sabour, Frosst and Hinton 2017]}
 \newcommand{\capsGANcitation}{[\cite{Jaiswal2018capsulegan}]}
 \newcommand{\gamCitation}{[\cite{Im2016generative}]}
 
@@ -222,7 +223,7 @@ Charles University}
   }
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Routing: Lower Levels Voting for Higher-Level Feature}
       \begin{center}
@@ -312,7 +313,7 @@ Charles University}
 
   \subsection{Routing by an Agreement}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Capsule Schema with Routing}
       \begin{center}
@@ -379,7 +380,7 @@ Charles University}
   }
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
     \begin{frame}{Routing Algorithm}
       \begin{center}
         \includegraphics[width=.6\textwidth]{../img/capsRouting.png}
@@ -424,7 +425,7 @@ Charles University}
 
   \subsection{Routing Iterations}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Average Change of Each Routing Logit $b_{ij}$ \\
         \tiny (by each routing iteration during training)}
@@ -456,7 +457,7 @@ Charles University}
   \subsection{Capsule Network}
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Architecture: Encoder-Decoder}
       \begin{itemize}[<+- | alert@+>]
@@ -474,7 +475,7 @@ Charles University}
 
   \subsection{Architecture: Encoder}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Encoder: CapsNet with 3 Layers}
       \begin{center}
@@ -550,7 +551,7 @@ Charles University}
   }
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
     \begin{frame}{Margin Loss \\
         \tiny to Train the Whole Encoder}
       In other words, each DigitCap $c$ has loss:
@@ -597,7 +598,7 @@ Charles University}
 
   \subsection{Architecture: Decoder}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Decoder: Regularization of CapsNets}
       \begin{center}
@@ -644,7 +645,7 @@ Charles University}
   % TODO show & compare w/ SotA methods
   \subsection{Capsule Networks: Experiments on MNIST}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{MNIST Reconstructions (CapsNet, 3 routing iterations)}
       \begin{tabular}
@@ -745,7 +746,7 @@ Charles University}
 
   \subsection{Capsule Networks: Experiments on MultiMNIST}
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{MultiMNIST Reconstructions (CapsNet, 3 routing iterations)}
       \begin{center}
@@ -1089,7 +1090,7 @@ Charles University}
   \end{frame}
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Sabour, Frosst and Hinton [2017])}
+    \setbeamertemplate{frame footer}{\colorcite\capsNetCitation}
 
     \begin{frame}{Results on Other Datasets \\
         \tiny smallNORB (LeCun et al. [2004])} % TODO replace citation
