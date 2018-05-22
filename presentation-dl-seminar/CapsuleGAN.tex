@@ -53,6 +53,7 @@
 \setcellgapes{5pt}
 
 \newcommand{\capsNetCitation}{[\cite{Sabour2017dynamic}]}
+\newcommand{\transformingAutoencCite}{[\cite{Hinton2011transforming}]}
 \newcommand{\capsGANcitation}{[\cite{Jaiswal2018capsulegan}]}
 \newcommand{\gamCitation}{[\cite{Im2016generative}]}
 
@@ -273,10 +274,10 @@ Charles University}
   }
 
   {
-    \setbeamertemplate{frame footer}{\colorcite(Hinton, Krizhevsky and Wang [2011])}
+    \setbeamertemplate{frame footer}{\colorcite\transformingAutoencCite}
 
     \begin{frame}{Previous Version of Capsules \\
-        \tiny for illustration taken from ``Transforming Auto-Encoders'' (Hinton, Krizhevsky and Wang [2011])}
+        \tiny for illustration taken from ``Transforming Auto-Encoders'' \transformingAutoencCite}
       \pause
       \begin{center}
         \includegraphics[width=\linewidth]{../img/transforming-auto-encoder.png}
