@@ -927,32 +927,26 @@ Charles University}
         r_{test} = \frac{A(D_{GAN}(\mathbf{x_{test}}))}{A(D_{CapsuleGAN}(\mathbf{x_{test}}))}
       \end{equation*}
       \pause
+
       CapsuleGAN is winning against GAN when:
       \pause
       \begin{itemize}[<+- | alert@+>]
-          \tiny
         \item $r_{samples} < 1$
+          \begin{itemize}[<+- | alert@+>]
+            \item on MNIST: $r_{samples} = 0.79$
+            \item on CIFAR-10: $r_{samples} = 1.0$
+          \end{itemize}
         \item $r_{test} \simeq 1$
+          \begin{itemize}[<+- | alert@+>]
+            \item on MNIST: $r_{test} = 1$
+            \item on CIFAR-10: $r_{test} = 0.72$
+          \end{itemize}
       \end{itemize}
       \pause
-      On MNIST:
-      \begin{itemize}[<+- | alert@+>]
-          \tiny
-        \item $r_{samples} = 0.79$
-        \item $r_{test} = 1$
-      \end{itemize}
+
+      $\Rightarrow$ CapsuleGAN $>$ GAN on~MNIST
       \pause
-      On CIFAR-10:
-      \begin{itemize}[<+- | alert@+>]
-          \tiny
-        \item $r_{samples} = 1.0$
-        \item $r_{test} = 0.72$
-      \end{itemize}
-      \pause
-      \begin{itemize}[<+- | alert@+>]
-        \item CapsuleGAN $>$ convolutional GAN (on MNIST)
-        \item comparable on~CIFAR-10.
-      \end{itemize}
+      and comparable on~CIFAR-10
     \end{frame}
 
     \begin{frame}{Semi-Supervised Classification: MNIST}
