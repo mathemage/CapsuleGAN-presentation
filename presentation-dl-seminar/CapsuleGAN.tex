@@ -908,14 +908,51 @@ Charles University}
       \end{itemize}
       \pause
 
-      \begin{equation*}%\label{eq:gam1}
+      \begin{equation*}
         r_{samples} = \frac{A(D_{GAN}(G_{CapsuleGAN}(\mathbf{z})))}{A(D_{CapsuleGAN}(G_{GAN}(\mathbf{z})))}
       \end{equation*}
       \pause
 
-      \begin{equation*}%\label{eq:gam2}
+      \begin{equation*}
         r_{test} = \frac{A(D_{GAN}(\mathbf{x_{test}}))}{A(D_{CapsuleGAN}(\mathbf{x_{test}}))}
       \end{equation*}
+    \end{frame}
+
+    \begin{frame}{Generative Adversarial Metrics\\
+        \tiny (standard) convolutional GAN vs. CapsuleGAN}
+      \pause
+      \begin{equation*}
+        r_{samples} = \frac{A(D_{GAN}(G_{CapsuleGAN}(\mathbf{z})))}{A(D_{CapsuleGAN}(G_{GAN}(\mathbf{z})))}
+        \qquad
+        r_{test} = \frac{A(D_{GAN}(\mathbf{x_{test}}))}{A(D_{CapsuleGAN}(\mathbf{x_{test}}))}
+      \end{equation*}
+      \pause
+      CapsuleGAN is winning against GAN when:
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+          \tiny
+        \item $r_{samples} < 1$
+        \item $r_{test} \simeq 1$
+      \end{itemize}
+      \pause
+      On MNIST:
+      \begin{itemize}[<+- | alert@+>]
+          \tiny
+        \item $r_{samples} = 0.79$
+        \item $r_{test} = 1$
+      \end{itemize}
+      \pause
+      On CIFAR-10:
+      \begin{itemize}[<+- | alert@+>]
+          \tiny
+        \item $r_{samples} = 1.0$
+        \item $r_{test} = 0.72$
+      \end{itemize}
+      \pause
+      \begin{itemize}[<+- | alert@+>]
+        \item CapsuleGAN $>$ convolutional GAN (on MNIST)
+        \item comparable on~CIFAR-10.
+      \end{itemize}
     \end{frame}
 
     \begin{frame}{Semi-Supervised Classification: MNIST}
