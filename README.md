@@ -2,6 +2,10 @@
 
 my [presentation](https://github.com/ufal/npfl117/tree/master/1718-summer) on [CapsuleGAN: Generative Adversarial Capsule Network](https://arxiv.org/pdf/1802.06167.pdf) for [Deep Learning Seminar](https://ufal.mff.cuni.cz/courses/npfl117)
 
+## Slides
+
+slides available at [SlideShare](https://www.slideshare.net/KarelHa1/capsulegan-generative-adversarial-capsule-network)
+
 ## Sources
 
 * original papers by the authors
