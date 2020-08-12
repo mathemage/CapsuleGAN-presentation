@@ -1,6 +1,6 @@
 # CapsuleGAN-presentation
 
-my [presentation](https://github.com/ufal/npfl117/tree/master/1718-summer) on [CapsuleGAN: Generative Adversarial Capsule Network](https://arxiv.org/pdf/1802.06167.pdf) for [Deep Learning Seminar](https://ufal.mff.cuni.cz/courses/npfl117)
+my [presentation](https://github.com/ufal/npfl117/tree/master/1718-summer) on [CapsuleGAN: Generative Adversarial Capsule Network](https://arxiv.org/pdf/1802.06167.pdf) for [Deep Learning Seminar](https://ufal.mff.cuni.cz/courses/npfl117/1718-summer)
 
 ## Slides
 
